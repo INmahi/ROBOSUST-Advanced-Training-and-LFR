@@ -15,6 +15,15 @@ concept — analog reading, PWM, digital I/O, and non-blocking timing.
 | [led_fade_pwm/](led_fade_pwm/led_fed_pwm.ino) | **PWM fade demo** — two LEDs (pins 9 & 10) cross-fade in opposite directions using `analogWrite()`. |
 | [sketch_mar14a/](sketch_mar14a/sketch_mar14a.ino) | **Digital + analog I/O combo** — a push button toggles one LED while a potentiometer's voltage crossing a 2.5V threshold drives a second LED. |
 
+## LFR Prototypes
+
+Putting it together — the 6-sensor array driving an L298N motor driver, evolving toward a working line follower.
+
+| Prototype | Purpose |
+|-----------|---------|
+| [Motor with array 1/](Motor%20with%20array%201/1.ino) | **Day 1** — first integration of the 6-sensor array with two DC motors via an L298N. Reads all sensors, maps the center sensors (A2/A3) to motor speeds, and drives forward while both are over the line. |
+| [Prototype - Day 2/](Prototype%20-%20Day%202/code.ino) | **Day 2** — adds a **dynamic threshold** (running `(min+max)/2`) and packs the sensor states into a **bitmask**, then drives forward when the center sensors detect the line. Includes prototype build photos. |
+
 ## Libraries
 
 | Folder | Purpose |
